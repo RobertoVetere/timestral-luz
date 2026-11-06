@@ -7,7 +7,18 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-_Todavía no hay días puntuados._
+**Días puntuados:** 1 (del 2026-11-07 al 2026-11-07). Precio medio real en el periodo: 232.6 €/MWh.
+
+|                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
+|:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
+| Repetir precios de hoy                     |                 17.36 |  20.86 |   16.06 |                    98.91 |          nan    |               1 |
+| Timestral (solo precios)                   |                 26.64 |  40.25 |  -25.66 |                    98.91 |            0.88 |               0 |
+| Regresión ridge (referencia entrenada)     |                 32.02 |  43.19 |  -30.98 |                    98.91 |          nan    |               0 |
+| Timestral + previsión eólica/solar/demanda |                 35.89 |  52.25 |  -35.89 |                    98.91 |            0.67 |               0 |
+| Timestral + previsiones + gas y generación |                 38.6  |  56.9  |  -38.6  |                    98.91 |            0.67 |               0 |
+| Mismo día semana pasada                    |                 46.87 |  63.92 |  -23.6  |                    98.91 |          nan    |               0 |
+
+![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
 
 **Cómo leerlo**

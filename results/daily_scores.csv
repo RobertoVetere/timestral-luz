@@ -1,0 +1,7 @@
+target,model,valid,mae,rmse,bias,real_mean,battery_eur,battery_perfect_eur,coverage80
+2026-11-07,misma_dia_semana_pasada,True,46.874,63.917,-23.604,232.581,68.021,68.771,
+2026-11-07,repetir_hoy,True,17.355,20.857,16.059,232.581,68.021,68.771,
+2026-11-07,ridge,True,32.019,43.194,-30.985,232.581,68.021,68.771,
+2026-11-07,timestral,True,26.641,40.249,-25.664,232.581,68.021,68.771,0.875
+2026-11-07,timestral_previsiones,True,35.889,52.249,-35.889,232.581,68.021,68.771,0.667
+2026-11-07,timestral_todo,True,38.603,56.9,-38.603,232.581,68.021,68.771,0.667
