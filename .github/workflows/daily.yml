@@ -1,0 +1,54 @@
+name: previsión diaria
+
+on:
+  schedule:
+    - cron: "40 7 * * *"   # mañana (08:40 Madrid en invierno): previsión de mañana, antes de la subasta de las 12:00
+    - cron: "50 12 * * *"  # mediodía (13:50 Madrid en invierno): OMIE ya publicó el resultado -> puntuar
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "forecast, score o both"
+        default: both
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-timestral-209m
+      - run: pip install -r requirements.txt
+      - name: Decide task
+        id: t
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "task=${{ inputs.task }}" >> $GITHUB_OUTPUT;
+          elif [ "${{ github.event.schedule }}" = "40 7 * * *" ]; then echo "task=forecast" >> $GITHUB_OUTPUT;
+          else echo "task=score" >> $GITHUB_OUTPUT; fi
+      - name: Forecast tomorrow
+        if: steps.t.outputs.task == 'forecast' || steps.t.outputs.task == 'both'
+        run: python src/forecast.py
+      - name: Score
+        if: always()
+        run: python src/score.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "timestral-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add forecasts results README.md
+          git diff --cached --quiet || git commit -m "datos $(date -u +%F) ${{ steps.t.outputs.task }}"
+          git pull --rebase && git push

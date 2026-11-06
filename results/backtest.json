@@ -1,0 +1,43 @@
+{
+ "dias": 115,
+ "desde": 1040,
+ "modelos": {
+  "Repetir día anterior": {
+   "mae": 22.53,
+   "rmse": 35.4,
+   "bateria_eur_mwh_dia": 85.61
+  },
+  "Misma día semana pasada": {
+   "mae": 29.2,
+   "rmse": 41.91,
+   "bateria_eur_mwh_dia": 87.07
+  },
+  "Ridge entrenado (precios+previsiones+gas)": {
+   "mae": 16.85,
+   "rmse": 22.9,
+   "bateria_eur_mwh_dia": 92.4
+  },
+  "Timestral solo precios": {
+   "mae": 16.02,
+   "rmse": 24.74,
+   "bateria_eur_mwh_dia": 90.55
+  },
+  "Timestral + previsión de demanda": {
+   "mae": 15.45,
+   "rmse": 23.83,
+   "bateria_eur_mwh_dia": 91.05
+  },
+  "Timestral + previsión eólica/solar/demanda": {
+   "mae": 10.46,
+   "rmse": 15.08,
+   "bateria_eur_mwh_dia": 92.87
+  },
+  "Timestral + previsiones + gas y generación": {
+   "mae": 10.36,
+   "rmse": 14.93,
+   "bateria_eur_mwh_dia": 92.86
+  }
+ },
+ "bateria_perfecta": 93.82,
+ "cobertura80_all": 0.747
+}
