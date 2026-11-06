@@ -3,7 +3,7 @@ name: previsión diaria
 on:
   schedule:
     - cron: "40 7 * * *"   # mañana (08:40 Madrid en invierno): previsión de mañana, antes de la subasta de las 12:00
-    - cron: "50 12 * * *"  # mediodía (13:50 Madrid en invierno): OMIE ya publicó el resultado -> puntuar
+    - cron: "20 16 * * *"  # tarde (17:20 Madrid en invierno): OMIE ya publicó el resultado -> puntuar
   workflow_dispatch:
     inputs:
       task:

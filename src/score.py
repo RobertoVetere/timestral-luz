@@ -98,6 +98,8 @@ def score_all() -> pd.DataFrame:
 
 
 def scoreboard(S: pd.DataFrame) -> None:
+    if "valid" not in S.columns:
+        S = S.assign(valid=[])
     S = S[S.valid.astype(str) == "True"].copy()
     if S.empty:
         md = "_Todavía no hay días puntuados._\n"

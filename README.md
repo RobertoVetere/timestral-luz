@@ -2,7 +2,7 @@
 
 Prueba en vivo durante un mes: ¿acierta [Timestral](https://huggingface.co/mistralai/Timestral-209M), el modelo de series temporales de Mistral, el precio de la luz en España antes de la subasta?
 
-Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora peninsular), un GitHub Action predice los 24 precios horarios del día siguiente y **los guarda en el repositorio**. El commit lleva fecha y hora, así que queda demostrado que la previsión se hizo antes de conocer el resultado. A mediodía, cuando OMIE publica el resultado, otro Action compara la previsión con el precio real y actualiza este marcador.
+Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora peninsular), un GitHub Action predice los 24 precios horarios del día siguiente y **los guarda en el repositorio**. El commit lleva fecha y hora, así que queda demostrado que la previsión se hizo antes de conocer el resultado. Por la tarde, cuando OMIE ya ha publicado el resultado, otro Action compara la previsión con el precio real y actualiza este marcador.
 
 ## Marcador
 
