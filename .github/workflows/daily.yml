@@ -2,7 +2,11 @@ name: previsión diaria
 
 on:
   schedule:
-    - cron: "40 7 * * *"   # mañana (08:40 Madrid en invierno): previsión de mañana, antes de la subasta de las 12:00
+    # GitHub puede retrasar los cron varias horas: se lanzan tres intentos de madrugada
+    # y solo se guarda la primera previsión del día (las siguientes no la sobrescriben).
+    - cron: "17 3 * * *"
+    - cron: "47 5 * * *"
+    - cron: "40 7 * * *"
     - cron: "20 16 * * *"  # tarde (17:20 Madrid en invierno): OMIE ya publicó el resultado -> puntuar
   workflow_dispatch:
     inputs:
@@ -36,7 +40,7 @@ jobs:
         id: t
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "task=${{ inputs.task }}" >> $GITHUB_OUTPUT;
-          elif [ "${{ github.event.schedule }}" = "40 7 * * *" ]; then echo "task=forecast" >> $GITHUB_OUTPUT;
+          elif [ "${{ github.event.schedule }}" != "20 16 * * *" ]; then echo "task=forecast" >> $GITHUB_OUTPUT;
           else echo "task=score" >> $GITHUB_OUTPUT; fi
       - name: Forecast tomorrow
         if: steps.t.outputs.task == 'forecast' || steps.t.outputs.task == 'both'

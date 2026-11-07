@@ -64,6 +64,9 @@ def main() -> None:
     ap.add_argument("--target", help="target delivery day (default: tomorrow, Madrid)")
     args = ap.parse_args()
     target = dt.date.fromisoformat(args.target) if args.target else today_madrid() + dt.timedelta(days=1)
+    if os.path.exists(os.path.join(ROOT, "forecasts", f"{target}.csv")) and not os.environ.get("FORCE"):
+        print(f"forecast for {target} already stored; keeping the earliest one")
+        return
     first = target - dt.timedelta(days=int(os.environ.get("HISTORY_DAYS", "400")))
     run_utc = dt.datetime.now(dt.timezone.utc)
     print(f"target {target}, panel {first}..{target}", flush=True)
