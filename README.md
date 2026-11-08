@@ -7,16 +7,16 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-**Días puntuados:** 1 (del 2026-11-07 al 2026-11-07). Precio medio real en el periodo: 232.6 €/MWh.
+**Días puntuados:** 2 (del 2026-11-07 al 2026-11-09). Precio medio real en el periodo: 206.1 €/MWh.
 
 |                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
 |:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
-| Repetir precios de hoy                     |                 17.36 |  20.86 |   16.06 |                    98.91 |          nan    |               1 |
-| Timestral (solo precios)                   |                 26.64 |  40.25 |  -25.66 |                    98.91 |            0.88 |               0 |
-| Regresión ridge (referencia entrenada)     |                 32.02 |  43.19 |  -30.98 |                    98.91 |          nan    |               0 |
-| Timestral + previsión eólica/solar/demanda |                 35.89 |  52.25 |  -35.89 |                    98.91 |            0.67 |               0 |
-| Timestral + previsiones + gas y generación |                 38.6  |  56.9  |  -38.6  |                    98.91 |            0.67 |               0 |
-| Mismo día semana pasada                    |                 46.87 |  63.92 |  -23.6  |                    98.91 |          nan    |               0 |
+| Repetir precios de hoy                     |                 26.46 |  32.3  |   18.23 |                    78.08 |          nan    |               1 |
+| Timestral + previsión eólica/solar/demanda |                 28.2  |  38.55 |  -13.71 |                    96.98 |            0.73 |               1 |
+| Timestral (solo precios)                   |                 28.6  |  37.85 |    0.98 |                    96.98 |            0.77 |               0 |
+| Timestral + previsiones + gas y generación |                 30.13 |  41.34 |  -16.96 |                    96.98 |            0.75 |               0 |
+| Regresión ridge (referencia entrenada)     |                 38.21 |  49.35 |  -32.7  |                    91.39 |          nan    |               0 |
+| Mismo día semana pasada                    |                 60.06 |  74.02 |  -13.11 |                    96.98 |          nan    |               0 |
 
 ![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
