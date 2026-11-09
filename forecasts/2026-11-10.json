@@ -1,0 +1,15 @@
+{
+ "target": "2026-11-10",
+ "run_utc": "2026-11-09T11:36:02+00:00",
+ "run_madrid": "2026-11-09T12:36:02+01:00",
+ "target_prices_already_published_at_run": false,
+ "context_hours": 1344,
+ "model": "mistralai/Timestral-209M",
+ "known_covariates_available_hours": {
+  "fc_load": 24,
+  "wx_wind100": 24,
+  "wx_radiation": 24,
+  "wx_temp": 24
+ },
+ "context_missing_hours": 0
+}
