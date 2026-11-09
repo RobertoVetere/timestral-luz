@@ -7,16 +7,16 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-**Días puntuados:** 2 (del 2026-11-07 al 2026-11-09). Precio medio real en el periodo: 206.1 €/MWh.
+**Días puntuados:** 3 (del 2026-11-07 al 2026-11-10). Precio medio real en el periodo: 195.9 €/MWh.
 
 |                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
 |:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
-| Repetir precios de hoy                     |                 26.46 |  32.3  |   18.23 |                    78.08 |          nan    |               1 |
-| Timestral + previsión eólica/solar/demanda |                 28.2  |  38.55 |  -13.71 |                    96.98 |            0.73 |               1 |
-| Timestral (solo precios)                   |                 28.6  |  37.85 |    0.98 |                    96.98 |            0.77 |               0 |
-| Timestral + previsiones + gas y generación |                 30.13 |  41.34 |  -16.96 |                    96.98 |            0.75 |               0 |
+| Repetir precios de hoy                     |                 24.38 |  30.58 |   14.92 |                    80.71 |          nan    |               2 |
+| Timestral + previsión eólica/solar/demanda |                 25.58 |  33.55 |   -3.02 |                    92.65 |            0.79 |               1 |
+| Timestral (solo precios)                   |                 27.3  |  34.92 |    6.62 |                    97.94 |            0.76 |               0 |
+| Timestral + previsiones + gas y generación |                 27.51 |  36.05 |   -4.31 |                    92.65 |            0.79 |               0 |
 | Regresión ridge (referencia entrenada)     |                 38.21 |  49.35 |  -32.7  |                    91.39 |          nan    |               0 |
-| Mismo día semana pasada                    |                 60.06 |  74.02 |  -13.11 |                    96.98 |          nan    |               0 |
+| Mismo día semana pasada                    |                 60.67 |  72.07 |   -3.7  |                    95.26 |          nan    |               0 |
 
 ![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
