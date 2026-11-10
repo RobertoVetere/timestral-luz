@@ -7,16 +7,16 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-**Días puntuados:** 3 (del 2026-11-07 al 2026-11-10). Precio medio real en el periodo: 195.9 €/MWh.
+**Días puntuados:** 4 (del 2026-11-07 al 2026-11-11). Precio medio real en el periodo: 199.8 €/MWh.
 
 |                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
 |:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
-| Repetir precios de hoy                     |                 24.38 |  30.58 |   14.92 |                    80.71 |          nan    |               2 |
-| Timestral + previsión eólica/solar/demanda |                 25.58 |  33.55 |   -3.02 |                    92.65 |            0.79 |               1 |
-| Timestral (solo precios)                   |                 27.3  |  34.92 |    6.62 |                    97.94 |            0.76 |               0 |
-| Timestral + previsiones + gas y generación |                 27.51 |  36.05 |   -4.31 |                    92.65 |            0.79 |               0 |
-| Regresión ridge (referencia entrenada)     |                 38.21 |  49.35 |  -32.7  |                    91.39 |          nan    |               0 |
-| Mismo día semana pasada                    |                 60.67 |  72.07 |   -3.7  |                    95.26 |          nan    |               0 |
+| Timestral + previsión eólica/solar/demanda |                 24.76 |  32.08 |   -4.39 |                    73.65 |            0.79 |               1 |
+| Timestral + previsiones + gas y generación |                 26.12 |  33.93 |   -5.32 |                    73.65 |            0.79 |               0 |
+| Repetir precios de hoy                     |                 29.19 |  37.88 |    1.3  |                    62.92 |          nan    |               2 |
+| Timestral (solo precios)                   |                 31.1  |  40.04 |   -2.37 |                    78.4  |            0.72 |               0 |
+| Regresión ridge (referencia entrenada)     |                 31.81 |  42.34 |  -19.34 |                    88.79 |          nan    |               1 |
+| Mismo día semana pasada                    |                 61.88 |  73.14 |    8.88 |                    74.52 |          nan    |               0 |
 
 ![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
