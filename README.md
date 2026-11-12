@@ -7,16 +7,16 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-**Días puntuados:** 5 (del 2026-11-07 al 2026-11-12). Precio medio real en el periodo: 184.9 €/MWh.
+**Días puntuados:** 6 (del 2026-11-07 al 2026-11-13). Precio medio real en el periodo: 185.1 €/MWh.
 
 |                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
 |:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
-| Timestral + previsión eólica/solar/demanda |                 27.45 |  34.57 |    3.3  |                    82.43 |            0.82 |               2 |
-| Timestral + previsiones + gas y generación |                 29.88 |  37.74 |    3.92 |                    82.43 |            0.79 |               0 |
+| Timestral + previsión eólica/solar/demanda |                 30.11 |  37.2  |   -4.49 |                    85.88 |            0.81 |               3 |
 | Regresión ridge (referencia entrenada)     |                 31.81 |  42.34 |  -19.34 |                    88.79 |          nan    |               1 |
-| Timestral (solo precios)                   |                 33.05 |  43.18 |    5.24 |                    85.57 |            0.75 |               0 |
-| Repetir precios de hoy                     |                 42.31 |  55.2  |   19.99 |                    31.85 |          nan    |               2 |
-| Mismo día semana pasada                    |                 77.1  |  87.2  |   34.69 |                    83    |          nan    |               0 |
+| Timestral + previsiones + gas y generación |                 32.26 |  40    |   -4.1  |                    85.88 |            0.78 |               0 |
+| Timestral (solo precios)                   |                 39.7  |  49.83 |   -7.8  |                    88.4  |            0.67 |               0 |
+| Repetir precios de hoy                     |                 47.22 |  60.02 |    5.02 |                    43.56 |          nan    |               2 |
+| Mismo día semana pasada                    |                 74.68 |  83.84 |   39.35 |                    86.34 |          nan    |               0 |
 
 ![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
