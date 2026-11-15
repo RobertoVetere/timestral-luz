@@ -7,16 +7,16 @@ Cada mañana, antes de la subasta del mercado diario de OMIE (12:00, hora penins
 ## Marcador
 
 <!-- SCOREBOARD:START -->
-**Días puntuados:** 8 (del 2026-11-07 al 2026-11-15). Precio medio real en el periodo: 170.5 €/MWh.
+**Días puntuados:** 9 (del 2026-11-07 al 2026-11-16). Precio medio real en el periodo: 166.0 €/MWh.
 
 |                                            |   Error medio (€/MWh) |   RMSE |   Sesgo |   Batería: % de lo ideal |   Cobertura 80% |   Días que gana |
 |:-------------------------------------------|----------------------:|-------:|--------:|-------------------------:|----------------:|----------------:|
-| Timestral + previsión eólica/solar/demanda |                 32.18 |  37.97 |    4.65 |                    89.06 |            0.76 |               4 |
-| Timestral + previsiones + gas y generación |                 33.27 |  40.06 |    2.05 |                    89.06 |            0.76 |               0 |
-| Timestral (solo precios)                   |                 38.65 |  47.63 |    0.44 |                    90.85 |            0.68 |               1 |
-| Regresión ridge (referencia entrenada)     |                 40.42 |  48.77 |    2.06 |                    91.99 |          nan    |               1 |
-| Repetir precios de hoy                     |                 50.13 |  60.9  |   15.6  |                    58.48 |          nan    |               2 |
-| Mismo día semana pasada                    |                 77.49 |  85.27 |   50.98 |                    89.34 |          nan    |               0 |
+| Timestral + previsión eólica/solar/demanda |                 33.33 |  39.79 |    0.25 |                    88.45 |            0.75 |               4 |
+| Timestral + previsiones + gas y generación |                 33.86 |  41.06 |   -1.52 |                    88.45 |            0.75 |               0 |
+| Timestral (solo precios)                   |                 36.79 |  45.38 |   -1.18 |                    90.04 |            0.71 |               2 |
+| Regresión ridge (referencia entrenada)     |                 39.87 |  48.44 |    3.72 |                    90.03 |          nan    |               1 |
+| Repetir precios de hoy                     |                 50.06 |  60.4  |    9.29 |                    61.45 |          nan    |               2 |
+| Mismo día semana pasada                    |                 74.11 |  81.6  |   50.55 |                    88.81 |          nan    |               0 |
 
 ![Error acumulado](results/scoreboard.png)
 <!-- SCOREBOARD:END -->
